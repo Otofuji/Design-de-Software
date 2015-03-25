@@ -1,0 +1,116 @@
+print ("\nDo you think you are smart? No one can beat me. I'm Batman! But normally people get to call me Sheldon. Anyway, there is no way you can beat me here. But you decided to challenge so let's challenge. First, who are you?")
+nm = input ("My name is ")
+print ("\nOkay, %s. I see why you're here. You're thrilled for challenge and you are trying to beat Batman. That's impossible but I admire your courage. So shall we begin."%nm)
+reply = input("Are you ready? ")
+yes = "Hell yeah sir!"
+if reply == yes:
+    print ("\nGreat! Now that's good! So let's move on. I'll now give you game instructions. You may choose stone, paper, scissor or spock. I will choose one of these. Upon choice is made, one of us will win. This will certainly be me, but anyway. Rules are: scissor cuts paper. Paper covers stone. Stone crushes lizard. Lizard poisons Spock. Spock smashes scissor. Scissor decapitates lizard. Lizard eats paper. Paper disproves Spock. Spock vaporizes stone. Stone crushes scissors. Do not worry if you can't remember this all. I'll remember you as we go. Shall we begin...")
+while reply != yes:
+    print("\nThat's not good enough. I wanna see enthusiasm! Either you go home now or shout 'Hell yeah sir!' (case sensitive)")
+    reply = input ("Are your really ready? ")
+print("\nBEGIN!")
+user = 0
+sheldon = 0 
+ans = input("You may choose stone, paper, scissor, lizard or spock: ")
+s = "scissor"
+p = "paper"
+r = "stone"
+l = "lizard"
+k = "spock"
+import random
+options = [s,p,r,l,k]
+cans = random.choice(options)
+while ans == cans:
+    options = [s,p,r,l,k]
+    cans = random.choice(options)
+    ans = input("\nWe chose the same... Stop imitating me and play with honor! Choose once more! You may choose stone, paper, scissor or spock. ")
+while sheldon!=user+3 and user!=sheldon+3:
+    options = [s,p,r,l,k]
+    cans = random.choice(options)
+    if ans == s and cans == p:
+        print("\nScissor cuts paper. You won this time, %s, but won't again!"%nm)
+        user = user+1
+        sheldon = 0
+    if ans == s and cans == r:
+        print("\nStone crushes scissor. Cry in deep agony, %s!"%nm)
+        user= 0
+        sheldon = sheldon+1
+    if ans == s and cans == l:
+        print("\nScissor decapitates lizard. I am going to lose my head because of you, %s!"%nm)
+        user=user+1
+        sheldon=0
+    if ans == s and cans == k:
+        print("\nSpock smashes scissor. HAA! Life long and prosper is not for %s!"%nm)
+        user=0
+        sheldon=sheldon+1
+    if ans == p and cans == s:
+        print("\nScissor cuts paper. And your score has just been cut!")
+        user=0
+        sheldon=sheldon+1
+    if ans == p and cans == r:
+        print("\nPaper covers stone. You're covering a shadow in my scoooore! Quit thaaat!")
+        user=user+1
+        sheldon=0
+    if ans == p and cans == l:
+        print("\nLizard eats paper and #%sisalooser"%nm)
+        user=0
+        sheldon=sheldon+1
+    if ans == p and cans == k:
+        print("\nOkay, paper disproves Spock and I am disproved. #%swins"%nm)
+        user=user+1
+        sheldon=0
+    if ans == r and cans == s:
+        print("\nIt was getting boring and you deserve this point. Let's make it more interesting now. We're just getting heated. Now we will play it serioysly. #give%sapoint"%nm)
+        user=user+1
+        sheldon=0
+    if ans == r and cans == p:
+        print("\nThis is how we play. Your score is back to zero and mine is +1 closer to win! Paper covers stones. Haaaaaa")
+        user=0
+        sheldon=sheldon+1
+    if ans == r and cans == l:
+        print("\nGood Lord! That was luck! Won't happen next time. Stone crushes lizard and you get one point")
+        user=user+1
+        sheldon=0
+    if ans == r and cans == k:
+        print("\nI SPOCKED YOU! Spock vaporizes stone!")
+        user=0
+        sheldon=sheldon+1
+    if ans == l and cans == s:
+        print("\nGuess what? Scissor decapitates lizard. You must have a head if you want to score anything! Zero head, zero point for you!!!!")
+        user=0
+        sheldon=sheldon+1
+    if ans == l and cans == p:
+        print("\nLizard eats paper. Gosh, you were hungry this time, uh? Take it easy and eat your lunch properly next time! No need to go eating everything around here! But you'll never eat my Amy!")
+        user=user+1
+        sheldon=0
+    if ans == l and cans == r:
+        print("\nStone crushes lizard and I am your crush! <3")
+        user=0
+        sheldon=sheldon+1
+    if ans == l and cans == k:
+        print("\nLizard poisions Spock. Spock was going to have a life long and prosper until you poisoned him early March 2015! YOU ARE A SERIAL KILLER! POLICE!!!! HELP!!!!!!!!!! I'll tell 911 %s killed Spock!"%nm)
+        user=user+1
+        sheldon=0
+    if ans == k and cans == s:
+        print("\nSpock smashes scissor and you smashed me. Fair. Spock is awesome!")
+        user=user+1
+        sheldon=0
+    if ans == k and cans == p:
+        print("\nPaper disproves Spock. You're disproved, my dear!")
+        user=0
+        sheldon=sheldon+1
+    if ans == k and cans == r:
+        print("\nSpock vaporizes stone and you vaporized me. Fair. Spock is awesome!")
+        user=user+1
+        sheldon=0
+    if ans == k and cans == l:
+        print("\nLizard poisions Spock. I poisioned you. Feel the fury of my fury.")
+        user=0
+        sheldon=sheldon+1      
+    if ans != s and ans != p and ans != r and ans != l and ans != k:
+        print("\nNEIN NEIN NEIN NEIN NEIN! This option does not exist! Please choose between stone, paper, scissor, lizard and spock!")
+    ans = input("Either of us shall win! Choose stone, paper, scissor, lizard or spock in your own honor! ")
+if sheldon==user+3:
+    print("\nYou lost the challenge! Game is over for you! A %s cannot beat a Batman!"%nm)
+if user==sheldon+3:
+    print("\nWHAT? YOU WON THE CHALLEGE!!! You're the new Batman! Game over to me! Congratulations, %s!"%nm)
